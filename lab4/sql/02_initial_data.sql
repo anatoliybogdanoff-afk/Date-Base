@@ -97,19 +97,5 @@ INSERT INTO e15_compensation (balance_operation_id, appeal_id) VALUES
 INSERT INTO e3_card_reissue (old_card_id, new_card_id, operator_id, reissued_at, reissue_reason) VALUES
 (1, 6, 1, TIMESTAMPTZ '2026-10-22 10:00:00+03', 'Замена повреждённой карты');
 
-SELECT setval(pg_get_serial_sequence('e1_card_owner', 'owner_id'), (SELECT max(owner_id) FROM e1_card_owner));
-SELECT setval(pg_get_serial_sequence('e2_card', 'card_id'), (SELECT max(card_id) FROM e2_card));
-SELECT setval(pg_get_serial_sequence('e4_benefit', 'benefit_id'), (SELECT max(benefit_id) FROM e4_benefit));
-SELECT setval(pg_get_serial_sequence('e5_tariff_product', 'tariff_product_id'), (SELECT max(tariff_product_id) FROM e5_tariff_product));
-SELECT setval(pg_get_serial_sequence('e6_card_product', 'card_product_id'), (SELECT max(card_product_id) FROM e6_card_product));
-SELECT setval(pg_get_serial_sequence('e7_transport_object', 'transport_object_id'), (SELECT max(transport_object_id) FROM e7_transport_object));
-SELECT setval(pg_get_serial_sequence('e8_validator', 'validator_id'), (SELECT max(validator_id) FROM e8_validator));
-SELECT setval(pg_get_serial_sequence('e9_validation', 'validation_id'), (SELECT max(validation_id) FROM e9_validation));
-SELECT setval(pg_get_serial_sequence('e10_trip', 'trip_id'), (SELECT max(trip_id) FROM e10_trip));
-SELECT setval(pg_get_serial_sequence('e11_transfer_rule', 'transfer_rule_id'), (SELECT max(transfer_rule_id) FROM e11_transfer_rule));
-SELECT setval(pg_get_serial_sequence('e12_transfer_chain', 'transfer_chain_id'), (SELECT max(transfer_chain_id) FROM e12_transfer_chain));
-SELECT setval(pg_get_serial_sequence('e13_balance_operation', 'balance_operation_id'), (SELECT max(balance_operation_id) FROM e13_balance_operation));
-SELECT setval(pg_get_serial_sequence('e14_appeal', 'appeal_id'), (SELECT max(appeal_id) FROM e14_appeal));
-SELECT setval(pg_get_serial_sequence('e16_employee_operator', 'operator_id'), (SELECT max(operator_id) FROM e16_employee_operator));
 
 COMMIT;
